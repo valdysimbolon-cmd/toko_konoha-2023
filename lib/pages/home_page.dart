@@ -49,7 +49,12 @@ class _HomePageState extends State<HomePage> {
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child:
-                          Text(c.emoji, style: const TextStyle(fontSize: 28)),
+                          Image.asset(
+                              c.image,
+                              width: 36,
+                              errorBuilder: (ctx, e, s) =>
+                                  Text(c.emoji, style: const TextStyle(fontSize: 28)),
+                            ),
                     ),
                     const SizedBox(height: 2),
                     Text(c.name, style: const TextStyle(fontSize: 10)),

@@ -38,8 +38,13 @@ class ProductCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Center(
-                  child: Text(product.emoji,
-                      style: const TextStyle(fontSize: 40))),
+                  child: Image.asset(
+                    product.image,
+                    height: 60,
+                    errorBuilder: (c, e, s) =>
+                        Text(product.emoji, style: const TextStyle(fontSize: 40)),
+                  ),
+                ),
               const Spacer(),
               Text(product.name,
                   style: const TextStyle(

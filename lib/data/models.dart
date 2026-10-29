@@ -14,12 +14,16 @@ class Category {
   final String title; // contoh: Kategori Sayuran
   final String emoji;
   const Category(this.name, this.title, this.emoji);
+
+  String get image => 'assets/images/kategori_${name.toLowerCase()}.png';
 }
 
 class Product {
   final String name, unit, category, emoji;
   final int price;
   const Product(this.name, this.unit, this.price, this.category, this.emoji);
+  String get image =>
+  'assets/images/${name.toLowerCase().replaceAll(' ', '_')}.png';
 }
 
 const categories = [

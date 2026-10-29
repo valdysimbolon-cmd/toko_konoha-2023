@@ -11,11 +11,20 @@ class BannerHeader extends StatelessWidget {
       height: 170,
       child: Stack(
         children: [
-          const Positioned(
+          // Gambar banner di kanan atas (kalau file belum ada, tampil emoji)
+          Positioned(
             right: 8,
-            top: 24,
-            child: Text('🥬🍅\n🍎🥕', style: TextStyle(fontSize: 48)),
+            top: 16,
+            child: Image.asset(
+              'assets/images/banner.png',
+              height: 120,
+              errorBuilder: (context, error, stack) => const Text(
+                '🥬🍅\n🍎🥕',
+                style: TextStyle(fontSize: 48),
+              ),
+            ),
           ),
+          // Kolom search di kiri atas
           Positioned(
             left: 12,
             top: 12,
@@ -38,6 +47,7 @@ class BannerHeader extends StatelessWidget {
               ),
             ),
           ),
+          // Sapaan di kiri bawah
           const Positioned(
             left: 16,
             bottom: 24,
